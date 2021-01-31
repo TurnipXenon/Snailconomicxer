@@ -1,0 +1,87 @@
+title: Start_Start
+tags: 
+position: -29.86615753173828,22.973966598510742
+---
+//do variable initialization here
+
+<<set $gameState = 0>>
+<<set $aaronScore = 0>>
+<<set $carlosScore = 0>>
+<<set $leoScore = 0>>
+// 0 - beginning listen to dialogue stuff
+// 1 - go to mixer
+// 2 - aaron phase
+// 3 - carlos phase
+// 4 - leo phase
+// 5 - game end
+
+Start of story
+L: say something.
+L: Go follow me
+
+
+<<set $gameState = 1>>
+===
+title: Start_Wait
+tags: 
+position: -22.97396469116211,376.77302169799805
+---
+Hey! Go over here!
+===
+title: Start_Intro
+tags: 
+position: 0,700.7059649825096
+---
+This is a mixer. Go to the table on the left left side.
+<<set $gameState = 2>>
+===
+title: Aaron_Start
+tags: 
+position: -22.973960876464844,1020.0440387129784
+---
+Dialog
+<<set $gameState = 3>>
+===
+title: Leo_Start
+tags: 
+position: 8,1694
+---
+Leo say stuff here
+[[Leo_End]]
+===
+title: Carlos_Start
+tags: 
+position: 0,1341.6796321868896
+---
+Carlos says stuff here
+<<set $gameState = 4>>
+===
+title: Leo_End
+tags: 
+position: 1492.3843893121398,2962.9614826424504
+---
+The game ends
+<<set $gameState = 5>>
+[[EndGame]]
+===
+title: EndGame
+tags: 
+position: 2046.05920853844,3500.512469357898
+---
+// if all chara has score above go End_Escargatoire
+// choose highest score and passing
+// Fail: End_LoneWolf
+[[End_LoneWolf]]
+===
+title: End_LoneWolf
+tags: 
+position: 2459.1544119499677,3498.2173397923816
+---
+[[Credits]]
+===
+title: Credits
+tags: 
+position: 3034.829721872453,3513.293725046261
+---
+<<gameEnd>>
+===
