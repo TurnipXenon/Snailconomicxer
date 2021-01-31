@@ -488,6 +488,7 @@ namespace SnailDate
         /// <inheritdoc/>
         public override void DialogueStarted()
         {
+            dialogBox.SetVisible(true);
             onDialogueStart?.Invoke();
         }
 
@@ -495,6 +496,7 @@ namespace SnailDate
         /// <inheritdoc/>
         public override void DialogueComplete()
         {
+            dialogBox.SetVisible(false);
             onDialogueEnd?.Invoke();
         }
 

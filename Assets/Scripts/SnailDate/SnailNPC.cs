@@ -10,9 +10,11 @@ namespace SnailDate
         public GameObject overworldSpritePrefab;
         
         private NavMeshAgent _agent;
+        private Transform _transform;
 
         void Start()
         {
+            _transform = transform;
             _agent = GetComponent<NavMeshAgent>();
             StartCoroutine(DelayedStart());
         }
@@ -21,7 +23,7 @@ namespace SnailDate
         {
             var sprite = Instantiate(overworldSpritePrefab).GetComponent<OverworldSprite>();
             sprite.transform.position = transform.position;
-            sprite.reference = transform;
+            sprite.reference = _transform;
             yield return new WaitForEndOfFrame();
         }
 

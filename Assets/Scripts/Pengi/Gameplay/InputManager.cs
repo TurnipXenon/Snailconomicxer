@@ -17,7 +17,7 @@ namespace Pengi.Gameplay
         public SnailNPC testSnail;
         public CustomCommands customCommands;
 
-        [HideInInspector] public InputState inputState = InputState.Normal;
+        [HideInInspector] public InputState inputState = InputState.MainDialogue;
 
         private Camera _camera;
         private float _toleratedTime;
@@ -36,10 +36,10 @@ namespace Pengi.Gameplay
             {
                 switch (inputState)
                 {
-                    case InputState.Normal:
+                    case InputState.MainDialogue:
                         dialogueUiManager.MarkLineComplete();
                         break;
-                    case InputState.Shelving:
+                    case InputState.Overworld:
                         break;
                     case InputState.Pause:
                         break;
@@ -64,9 +64,10 @@ namespace Pengi.Gameplay
 
                     switch (inputState)
                     {
-                        case InputState.Normal:
-                        case InputState.Shelving:
-                            clickableItem?.OnClick();
+                        case InputState.MainDialogue:
+                            break;
+                        case InputState.Overworld:
+                            // clickableItem?.OnClick();
                             break;
                         case InputState.Pause:
                             // if we can cast it to ClickableItem, go activate
@@ -76,14 +77,26 @@ namespace Pengi.Gameplay
                             throw new ArgumentOutOfRangeException();
                     }
                 }
-
-                var ray3d = _camera.ScreenPointToRay(Mouse.current.position.ReadValue());
-                RaycastHit hitInfo;
-                if (Physics.Raycast(ray3d.origin, ray3d.direction, out hitInfo))
+            }
+            
+            
+            var ray3d = _camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray3d.origin, ray3d.direction, out hitInfo))
+            {
+                      
+                switch (inputState)
                 {
-                    testSnail.SetTarget(hitInfo.point);
-                }
-                
+                    case InputState.MainDialogue:
+                        break;
+                    case InputState.Overworld:
+                        testSnail.SetTarget(hitInfo.point);
+                        break;
+                    case InputState.Pause:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }          
             }
 
             // for mouse clicks:
@@ -100,8 +113,8 @@ namespace Pengi.Gameplay
 
     public enum InputState
     {
-        Normal,
-        Shelving,
+        MainDialogue,
+        Overworld,
         Pause
     }
 }

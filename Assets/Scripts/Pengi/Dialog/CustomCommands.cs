@@ -82,7 +82,7 @@ namespace Pengi.Dialog
             _saveClient = null;
         }
 
-        private void Awake()
+        protected void Awake()
         {
             _impulseSignal = GetComponent<CinemachineImpulseSource>();
 

@@ -1,6 +1,6 @@
 [comment]: <> (![Gameplay footage 1]&#40;/Docs/pengi-header03.gif&#41;)
 <h1>Snailconomicxer</h1>
-
+Be your own boss! In this snail multi level marketing (MLM) mixer, you will get to talk to the hottest Fortune 3 CEOs. "Woo" them and show them who's the networking boss!
 <h1>Where to play</h1>
 Windows
 
@@ -52,4 +52,4 @@ These fonts are in Assets/Art/Font
 All custom scripts and scene files are licensed under an [MIT License](/CODE_LICENSE).
 
 ## Assets
-todo: CC0 here
+todo: CC0 go crazy except for Nicole's assets here

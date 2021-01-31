@@ -64,7 +64,7 @@ namespace Pengi.Manager
             if (IsPaused)
             {
                 // Unpause
-                inputManager.SetInputState(InputState.Normal);
+                inputManager.SetInputState(InputState.MainDialogue);
                 popupObject.SetActive(false);
             }
             else

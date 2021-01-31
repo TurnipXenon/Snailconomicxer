@@ -7,6 +7,7 @@ namespace SnailDate
     public class DialogBox : MonoBehaviour
     {
         public TextMeshProUGUI dialogText;
+        public GameObject dialogBoxImage;
         
         public DialogBoxReturn InformSpeaker(string speakerText)
         {
@@ -26,6 +27,11 @@ namespace SnailDate
         public void ShowCharacters(int i)
         {
             dialogText.maxVisibleCharacters = i;
+        }
+
+        public void SetVisible(bool b)
+        {
+            dialogBoxImage.SetActive(b);
         }
     }
 

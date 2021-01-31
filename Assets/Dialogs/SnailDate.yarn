@@ -4,12 +4,13 @@ position: -29.86615753173828,22.973966598510742
 ---
 //do variable initialization here
 
-<<set $gameState = 0>>
+<<setGameState beginning>>
+
 <<set $aaronScore = 0>>
 <<set $carlosScore = 0>>
 <<set $leoScore = 0>>
 // 0 - beginning listen to dialogue stuff
-// 1 - go to mixer
+// 1 - go to mixer (overworldStart)
 // 2 - aaron phase
 // 3 - carlos phase
 // 4 - leo phase
@@ -17,10 +18,12 @@ position: -29.86615753173828,22.973966598510742
 
 Start of story
 L: say something.
+<<shake>>
 L: Go follow me
 
 
-<<set $gameState = 1>>
+// <<set $gameState = 1>>
+<<setGameState overworldStart>>
 ===
 title: Start_Wait
 tags: 
@@ -33,14 +36,14 @@ tags:
 position: 0,700.7059649825096
 ---
 This is a mixer. Go to the table on the left left side.
-<<set $gameState = 2>>
+<<setGameState aaronPhase>>
 ===
 title: Aaron_Start
 tags: 
 position: -22.973960876464844,1020.0440387129784
 ---
 Dialog
-<<set $gameState = 3>>
+<<setGameState carlosPhase>>
 ===
 title: Leo_Start
 tags: 
@@ -54,14 +57,14 @@ tags:
 position: 0,1341.6796321868896
 ---
 Carlos says stuff here
-<<set $gameState = 4>>
+<<setGameState leoPhase>>
 ===
 title: Leo_End
 tags: 
 position: 1492.3843893121398,2962.9614826424504
 ---
 The game ends
-<<set $gameState = 5>>
+<<setGameState gameEnd>>
 [[EndGame]]
 ===
 title: EndGame
