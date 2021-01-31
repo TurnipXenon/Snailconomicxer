@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2420984313423444227
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324864, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324869, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: npcNodeStart
+      value: Carlos_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491106378414324869, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: overworldSpritePrefab
+      value: 
+      objectReference: {fileID: 1377517470716308510, guid: b359cfae5306b8a45aed4fd3b076df66,
+        type: 3}
+    - target: {fileID: 6491106378414324871, guid: 2b6ba16925e874f49a56a4e8b74ff342,
+        type: 3}
+      propertyPath: m_Name
+      value: AS_GiantAfricanSnail
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b6ba16925e874f49a56a4e8b74ff342, type: 3}

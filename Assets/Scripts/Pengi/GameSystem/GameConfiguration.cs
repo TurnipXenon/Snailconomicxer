@@ -1,8 +1,11 @@
 using System;
+using Pengi.Gameplay;
 using Pengi.GameSystem.Save;
+using SnailDate;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 namespace Pengi.GameSystem
 {
@@ -116,6 +119,10 @@ namespace Pengi.GameSystem
 
         public static int AutoSaveIndex = 0;
         private PlayerPreferences _playerPref = new PlayerPreferences();
+        private InputManager _inputManager;
+        private DialogueRunner _dialogueRunner;
+        private SnailNPC _mainPlayer;
+        private SnailGameState _gameState;
         private const float _shakeStrength = 1f;
         private const string PlayerPreferenceFilename = "PengiPlayePref";
 
@@ -128,6 +135,9 @@ namespace Pengi.GameSystem
         public float ShakeStrength => _playerPref.showVisualEffects ? _shakeStrength : 0f;
 
         public SaveIO SaveIo => saveIo ?? (saveIo = new SaveIO(this));
+        
+        // this is a game jam : don't use outside dialogue manager
+        public InputState InputState => _inputManager.inputState;
 
         /// <summary>
         /// When the game starts, load the player preferences.
@@ -222,6 +232,38 @@ namespace Pengi.GameSystem
         {
             // todo: custom sprites
         }
+
+        public void SetInputManager(InputManager inputManager)
+        {
+            _inputManager = inputManager;
+        }
+
+        public void StartDialogue(string npcNodeStart)
+        {
+            _dialogueRunner.StartDialogue(npcNodeStart);
+        }
+
+        public void SetDialogueRunner(DialogueRunner dialogueRunner)
+        {
+            _dialogueRunner = dialogueRunner;
+        }
+
+        public void SetMainPlayer(SnailNPC snailNPC)
+        {
+            _mainPlayer = snailNPC;
+        }
+
+        public SnailNPC GetPlayer()
+        {
+            return _mainPlayer;
+        }
+
+        public void SetGameState(SnailGameState beginning)
+        {
+            _gameState = beginning;
+        }
+
+        public SnailGameState GameState => _gameState;
     }
 
 

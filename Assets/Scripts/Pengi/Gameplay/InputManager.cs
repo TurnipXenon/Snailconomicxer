@@ -1,5 +1,6 @@
 using System;
 using Pengi.Dialog;
+using Pengi.GameSystem;
 using SnailDate;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,7 @@ namespace Pengi.Gameplay
         private Camera _camera;
         private float _toleratedTime;
         private bool _requestRaycast = false;
+        private InputState _lastState;
 
         private void Awake()
         {
@@ -67,7 +69,7 @@ namespace Pengi.Gameplay
                         case InputState.MainDialogue:
                             break;
                         case InputState.Overworld:
-                            // clickableItem?.OnClick();
+                            clickableItem?.OnClick();
                             break;
                         case InputState.Pause:
                             // if we can cast it to ClickableItem, go activate
@@ -107,6 +109,18 @@ namespace Pengi.Gameplay
         {
             _toleratedTime = Time.time + clickDelay;
             inputState = state;
+        }
+
+        public void ToggleToMainDialogue(bool shouldDoDialogue)
+        {
+            if (shouldDoDialogue)
+            {
+                inputState = InputState.MainDialogue;
+            }
+            else
+            {
+                inputState = InputState.Overworld;
+            }
         }
     }
 

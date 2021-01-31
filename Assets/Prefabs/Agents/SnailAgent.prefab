@@ -82,8 +82,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1601617736672506395}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 10
+  m_Radius: 1
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -115,5 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7187358f6e42e6992dfb6313b20153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameConfiguration: {fileID: 11400000, guid: b016d432416a3f44abb0b0ed6d03b2c9, type: 2}
   overworldSpritePrefab: {fileID: 6185896029697478625, guid: 6a2335e091dae974883da060dbb10e69,
     type: 3}
+  isNPC: 0
+  isMainPlayer: 1
+  interactionSqrDistance: 1.5
+  npcNodeStart: Leo_Start

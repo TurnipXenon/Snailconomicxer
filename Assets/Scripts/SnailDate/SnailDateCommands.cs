@@ -13,7 +13,7 @@ namespace SnailDate
             dialogueRunner.AddCommandHandler("setGameState", SetGameState);
         }
 
-        private void SetGameState(string[] parameters)
+        public void SetGameState(string[] parameters)
         {
             if (parameters.Length != 1)
             {
@@ -27,33 +27,39 @@ namespace SnailDate
             if (smallArg.Equals("beginning"))
             {
                 // todo: game set game state
+                gameConfiguration.SetGameState(SnailGameState.Beginning);
                 memoryStorage.SetValue(gameState, 0);
                 inputManager.SetInputState(InputState.MainDialogue);
             }
             else if (smallArg.Equals("overworldstart"))
             {
                 // todo: game set game state
+                gameConfiguration.SetGameState(SnailGameState.OverworldStart);
                 memoryStorage.SetValue(gameState, 1);
                 inputManager.SetInputState(InputState.Overworld);
             }
             else if (smallArg.Equals("aaronphase"))
             {
                 // todo: game set game state
+                gameConfiguration.SetGameState(SnailGameState.AaronPhase);
                 memoryStorage.SetValue(gameState, 2);
             }
             else if (smallArg.Equals("carlosphase"))
             {
                 // todo: game set game state
+                gameConfiguration.SetGameState(SnailGameState.CarlosPhase);
                 memoryStorage.SetValue(gameState, 3);
             }
             else if (smallArg.Equals("leophase"))
             {
                 // todo: game set game state
+                gameConfiguration.SetGameState(SnailGameState.LeoPhase);
                 memoryStorage.SetValue(gameState, 4);
             }
             else if (smallArg.Equals("gameend"))
             {
                 // todo: game set game state
+                gameConfiguration.SetGameState(SnailGameState.GameEnd);
                 memoryStorage.SetValue(gameState, 5);
             }
             else

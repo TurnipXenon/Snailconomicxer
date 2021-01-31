@@ -28,7 +28,7 @@ namespace Pengi.Manager
 
         public bool IsSaveDone => _isSaveDone;
 
-        private void OnEnable()
+        protected void OnEnable()
         {
             if (_saveClient == null)
             {
@@ -36,7 +36,7 @@ namespace Pengi.Manager
             }
         }
 
-        private void OnDisable()
+        protected void OnDisable()
         {
             gameConfiguration.ReleaseSaveAccess(_saveClient);
             _saveClient = null;
