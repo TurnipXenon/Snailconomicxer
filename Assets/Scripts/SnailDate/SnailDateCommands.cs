@@ -6,6 +6,8 @@ namespace SnailDate
 {
     public class SnailDateCommands : CustomCommands
     {
+        public SnailDateDirector director;
+        
         protected void Awake()
         {
             base.Awake();
@@ -65,7 +67,11 @@ namespace SnailDate
             else
             {
                 Debug.LogError($"SetGameState: Unknown game state: {parameters[0]}");
+                return;
             }
+            
+            
+            director.OnStateStart();
         }
     }
 }

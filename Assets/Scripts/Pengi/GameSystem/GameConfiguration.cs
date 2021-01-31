@@ -240,6 +240,7 @@ namespace Pengi.GameSystem
 
         public void StartDialogue(string npcNodeStart)
         {
+            Debug.Log($"Starting node: {npcNodeStart}");
             _dialogueRunner.StartDialogue(npcNodeStart);
         }
 

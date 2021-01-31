@@ -1,6 +1,6 @@
 title: Start_Start
 tags: 
-position: -29.86615753173828,22.973966598510742
+position: 13.784378051757812,142.4385974407196
 ---
 //do variable initialization here
 
@@ -21,40 +21,44 @@ L: say something.
 <<shake>>
 L: Go follow me
 
+->Yes
+->No
+
+Okay then
 
 // <<set $gameState = 1>>
 <<setGameState overworldStart>>
 ===
 title: Start_Wait
 tags: 
-position: -22.97396469116211,376.77302169799805
+position: 0.0000019073486328125,1654.1254920959473
 ---
 Hey! Go over here!
 ===
 title: Start_Intro
 tags: 
-position: 0,700.7059649825096
+position: -13.784378051757812,1235.9993731975555
 ---
 This is a mixer. Go to the table on the left left side.
 <<setGameState aaronPhase>>
 ===
 title: Aaron_Start
 tags: 
-position: -22.973960876464844,1020.0440387129784
+position: -50.5427303314209,850.0367240905762
 ---
-Dialog
+Dialog for Aaron
 <<setGameState carlosPhase>>
 ===
 title: Leo_Start
 tags: 
-position: 8,1694
+position: -10.379173278808594,2112.126220703125
 ---
 Leo say stuff here
 [[Leo_End]]
 ===
 title: Carlos_Start
 tags: 
-position: 0,1341.6796321868896
+position: 50.542728424072266,477.85848236083984
 ---
 Carlos says stuff here
 <<setGameState leoPhase>>
@@ -80,6 +84,7 @@ title: End_LoneWolf
 tags: 
 position: 2459.1544119499677,3498.2173397923816
 ---
+Lone wolf ending
 [[Credits]]
 ===
 title: Credits
