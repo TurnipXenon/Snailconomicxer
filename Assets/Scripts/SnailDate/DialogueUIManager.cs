@@ -23,6 +23,7 @@ namespace SnailDate
         public InputManager inputManager;
         public CustomCommands customCommands;
         public DialogBox dialogBox;
+        public OptionHandler optionHandler;
 
         [Header("Critical")] public GameConfiguration gameConfiguration;
 
@@ -428,7 +429,7 @@ namespace SnailDate
             ILineLocalisationProvider localisationProvider,
             System.Action<int> selectOption)
         {
-            // iconManager.CreateButtons(optionsCollection.Options.Length);
+            optionHandler.CreateButtons(optionsCollection.Options.Length);
 
             // Display each option in a button, and make it visible
             int i = 0;
@@ -440,7 +441,7 @@ namespace SnailDate
             // iconManager.InformShowingOptions();
             foreach (var optionString in optionsCollection.Options)
             {
-                // iconManager.ActivateButtons(i, () => SelectOption(optionString.ID));
+                optionHandler.ActivateButtons(i, () => SelectOption(optionString.ID));
 
                 var optionText = localisationProvider.GetLocalisedTextForLine(optionString.Line);
 
@@ -450,7 +451,7 @@ namespace SnailDate
                     optionText = optionString.Line.ID;
                 }
 
-                // iconManager.SetButtonText(i, optionText);
+                optionHandler.SetButtonText(i, optionText);
 
                 i++;
             }
@@ -463,7 +464,7 @@ namespace SnailDate
                 yield return null;
             }
 
-            // iconManager.HideAllButtons();
+            optionHandler.HideAllButtons();
 
             onOptionsEnd?.Invoke();
         }

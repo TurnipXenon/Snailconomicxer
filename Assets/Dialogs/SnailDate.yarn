@@ -21,8 +21,8 @@ L: say something.
 <<shake>>
 L: Go follow me
 
-->Yes
-->No
+// ->Yes
+// ->No
 
 Okay then
 
